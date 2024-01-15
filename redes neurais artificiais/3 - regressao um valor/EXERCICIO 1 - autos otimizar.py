@@ -43,10 +43,10 @@ def custom_scoring_function(y_true, y_pred):
 
 def criar_rede(loss):
     regressor = Sequential()
-    regressor.add(Dense(units=158, activation='relu', input_dim=316))
-    regressor.add(Dense(units=158, activation='relu'))    
+    regressor.add(Dense(units=158, activation='relu', kernel_initializer = 'random_uniform', input_dim=316))
+    regressor.add(Dense(units=158, activation='relu', kernel_initializer = 'random_uniform'))    
     regressor.add(Dense(units=1, activation='linear'))
-    regressor.compile(loss=loss, optimizer='adam', metrics='mean_absolute_error')
+    regressor.compile(loss=loss, optimizer='adam', metrics=['mean_absolute_error'])
     return regressor
 
 regressor = KerasRegressor(build_fn=criar_rede)
