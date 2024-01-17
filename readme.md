@@ -1,3 +1,7 @@
+##CURSO
+
+https://www.udemy.com/course/deep-learning-com-python-az-curso-completo
+
 #start conda
 
 source /home/upiara/anaconda3/bin/activate
