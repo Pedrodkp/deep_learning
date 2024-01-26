@@ -13,6 +13,10 @@ ex: se a saída de uma camada convolucional ou de pooling tem as dimensões (alt
 https://adamharley.com/
 https://adamharley.com/nn_vis/
 https://adamharley.com/nn_vis/cnn/3d.html
+https://pianalytix.com/cnn-convolutional-neural-network/
 
 #Explicacao de teoria
 Como sabemos a rede aprende a determinar os pesos, na explicacao da rede neural densa isso fica bem ilustrado do por que o peso determina a resposta.
+
+#CNN vs SVM
+Antes usavamos SVM, mas devido a aprimoramento o CNN tem se comportado melhor
