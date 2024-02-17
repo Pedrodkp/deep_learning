@@ -8,13 +8,15 @@ from keras.preprocessing.image import ImageDataGenerator
 
 #a ideia aqui e classificar usando a cifar-10
 #https://www.cs.toronto.edu/~kriz/cifar.html
-#a base contemplate: avião, automóvel, pássaro, gato, veado, cachorro, sapo, cavalo, navio e caminhão
+#a base contemplata (exatamente nessa ordem): 
+#avião, automóvel, pássaro, gato, veado, cachorro, sapo, cavalo, barco e caminhão
 
 (X_treinamento, y_treinamento), (X_teste, y_teste) = cifar10.load_data()
 
 # Mostra a imagem e a respectiva classe, de acordo com o índice passado como parâmetro
 # Você pode testar os seguintes índices para visualizar uma imagem de cada classe
 # Avião - 650
+# Automóvel - 4
 # Pássaro - 6
 # Gato - 9
 # Veado - 3
@@ -23,7 +25,6 @@ from keras.preprocessing.image import ImageDataGenerator
 # Cavalo - 652
 # Barco - 811
 # Caminhão - 970
-# Automóvel - 4
 plt.imshow(X_treinamento[2])
 plt.title('Classe '+ str(y_treinamento[2]))
 
@@ -48,3 +49,22 @@ classificador.add(Dense(units=10, activation='softmax'))
 classificador.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 classificador.fit(previsores_treinamento, classe_treinamento, batch_size=256, epochs=10, validation_data=(previsores_teste, classe_teste))
 resultado = classificador.evaluate(previsores_teste, classe_teste)
+
+import numpy as np
+import keras.utils as image
+
+def test_image(img):
+    imagem_teste = image.load_img(img, target_size=(32,32))
+    imagem_teste = image.img_to_array(imagem_teste)
+    imagem_teste /= 255
+    imagem_teste = np.expand_dims(imagem_teste, axis=0)
+    previsao = classificador.predict(imagem_teste)
+    print(img+" -> "+str(previsao))
+    
+test_image('gatos cachorros/test/kayla.jpeg')
+test_image('gatos cachorros/test/kayla2.jpeg')
+test_image('gatos cachorros/test/pacoca_pipoca.jpeg')
+test_image('gatos cachorros/test/pacoca.jpeg')
+test_image('gatos cachorros/test/ipanema.jpg')
+test_image('gatos cachorros/test/opala.jpg')
+test_image('gatos cachorros/test/amazonas.jpg')

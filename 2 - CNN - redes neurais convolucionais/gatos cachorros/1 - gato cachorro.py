@@ -3,7 +3,7 @@ from keras.layers import Dense, Flatten, Dropout, Conv2D, MaxPooling2D, BatchNor
 from keras.preprocessing.image import ImageDataGenerator
 
 classificador = Sequential()
-#input_shape forca uma resolucao, ou seja, o banco esta com N diferentes dimensoens, ele normaliza
+#input_shape forca uma resolucao, ou seja, o banco esta com N diferentes dimensoes, ele normaliza
 classificador.add(Conv2D(32, (3,3), input_shape=(64,64,3), activation='relu'))
 classificador.add(BatchNormalization())
 classificador.add(MaxPooling2D(pool_size=(2,2)))
