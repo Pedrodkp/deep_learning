@@ -17,6 +17,7 @@ pip install tensorflow
 pip install keras
 pip install scikeras[tensorflow]      # gpu compute platform
 pip install scikeras[tensorflow-cpu]  # cpu 
+pip install opencv-python
 
 #resumo de termos
 
