@@ -102,6 +102,6 @@ plt.plot(previsoes, color='blue', label='Previsoes')
 plt.title('Previsao preço das açoes')
 plt.xlabel('Tempo')
 plt.ylabel('Valor Yahoo')
-plt.legent()
+plt.legend()
 plt.show()
     
