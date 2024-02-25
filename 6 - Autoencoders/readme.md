@@ -12,3 +12,7 @@ Ele e muito parecido com uma rede neural densa, mas com variacoes em sua constru
 ## Deep autoencoder
 
 Tambem sao chamados de stack autoencoder, mas isso e uma discussao teorica, o que importa na pratica e aplicacao
+
+## Convolucional encoder
+
+Costuma ser o melhor, mas o poder computacional exigido e desproporcialmente maior, usar com cuidado
