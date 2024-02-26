@@ -39,8 +39,8 @@ dimensao_original = Input(shape=3072,)
 camada_encoder1 = autoencoder.layers[0]
 camada_encoder2 = autoencoder.layers[1]
 camada_encoder3 = autoencoder.layers[2]
-encoder = Model(dimensao_original, camada_encoder3(camada_encoder2(camada_encoder1(dimensao_original))))
-encoder.summary() # Total params: 
+encoder = Model(dimensao_original, camada_encoder3(camada_encoder2(camada_encoder1(dimensao_original)))) #val_accuracy: 0.0293
+encoder.summary() # Total params: 7,081,728
 
 imagens_codificadas = encoder.predict(previsores_teste)
 imagens_decodificadas = autoencoder.predict(previsores_teste)
@@ -48,10 +48,10 @@ imagens_decodificadas = autoencoder.predict(previsores_teste)
 # Ver
 numero_imagens = 10
 imagens_teste = np.random.randint(previsores_teste.shape[0], size=numero_imagens)
-    #aqui temos que tentar formar um quadrado para enxergar, achando a RAIZ do shape, √384 = 19,595917942
+    #aqui temos que tentar formar um quadrado para enxergar, achando a RAIZ do shape, √1536 = 39,19
     #nao podemos arredondar e precisam ser numeros inteiros
-    #logo nem sempre e possivel, podemos entao tentar uma multiplicacao que de exatamente 384 para tentar enxergar
-    #uma combinacao pode ser 16x24 = 384, podemos inverter, etc, enfim, o que facilitar enxergar, isso para cada reshape
+    #logo nem sempre e possivel, podemos entao tentar uma multiplicacao que de exatamente 1536 para tentar enxergar
+    #uma combinacao pode ser 32x48 = 1536, podemos inverter, etc, enfim, o que facilitar enxergar, isso para cada reshape
 plt.figure(figsize=(18,18))
 for i, indice_imagem in enumerate(imagens_teste):
     print(i)
@@ -66,7 +66,7 @@ for i, indice_imagem in enumerate(imagens_teste):
     
     #imagens codificadas
     eixo = plt.subplot(10,10,i+1+numero_imagens)
-    plt.imshow(imagens_codificadas[indice_imagem].reshape(16,24))
+    plt.imshow(imagens_codificadas[indice_imagem].reshape(32,48)) #1536
     plt.xticks()
     plt.yticks()
     
@@ -75,3 +75,5 @@ for i, indice_imagem in enumerate(imagens_teste):
     plt.imshow(imagens_decodificadas[indice_imagem].reshape(32,32,3))
     plt.xticks()
     plt.yticks()
+    
+#val_accuracy: 0.0293 ficou muito ruim

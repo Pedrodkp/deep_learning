@@ -1,3 +1,6 @@
+### IMPORTANTE> a versao do professor tambem fica com o val_accuracy: 0.0287 extremamente baixo
+#               mesmo com uma camada a menos e resolucoes maiores
+
 import matplotlib.pyplot as plt
 import numpy as np
 # Importação da base cifar10
