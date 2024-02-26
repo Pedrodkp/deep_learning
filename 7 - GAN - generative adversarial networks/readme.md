@@ -26,3 +26,12 @@ Deve poussir na camada de saida apenas um neuronio, dizendo a probabilidade da i
 No começo o gerador vai gerar imagens sem sentido algum, e o discriminador vai facilmente desconsiderar mas vai adicionar como imagem invalida
 para acelerar o processo, ou seja o discrimador e alimentado pelo gerador com imagens negativas e vai retornando a probabilidade das imagens serem
 o que se pediu parar gera
+
+# Install
+
+keras not support GANs by default, so we need to install extra packages  
+https://github.com/bstriner/keras-adversarial  
+install:  
+git clone https://github.com/bstriner/keras_adversarial.git  
+cd keras_adversarial  
+python setup.py install  

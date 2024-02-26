@@ -45,3 +45,8 @@ pip install opencv-python
 - Um algoritmo de otimização usado para treinar redes neurais.
 - Os pesos são atualizados após cada exemplo de treinamento, tornando o processo mais rápido e adaptável.
 
+#GANs - generative adversarial networks
+O curso aborda o tema, mas por ser de 2018 não utiliza o tensorflow 2 mas o 1.x, a maior parte do curso não tem grandes problemas com isso, mas essa sessão
+faz uso de uma lib https://github.com/bstriner/keras-adversarial ja não atualizada a 7 anos agora (2024), atualizar o código das aulas se quer parece ser possivel
+então basicamente assisti as aulas, mas resolvi fazer um curso especializado em GAN com Keras: https://www.udemy.com/course/keras-deep-learning-generative-adversarial-networks-gan
+de qualquer forma a teoria apresentada é boa e ver uma implementação mesmo que antiga ja da algum caminho a seguir.
